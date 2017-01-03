@@ -11,7 +11,7 @@ As quebras de linhas são feitas atravês de arrays por exemplo:
 "Segunda Linha"
 ]
 ```
-Fique atendo pois não pode existir a vírgula do ultimo índice.
+Fique atento pois não pode existir a vírgula no ultimo índice.
 
 No mais, É ISSO!
 
