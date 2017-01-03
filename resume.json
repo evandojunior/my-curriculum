@@ -1,0 +1,87 @@
+{
+    "nome": "O Seu Nome completo",
+    "nascionalidade": "Nascionalidade",
+    "idade": "33",
+    "email": "email@gmail.com",
+    "cidade": "Cidade",
+    "estado": "Estado",
+    "pais": "País",
+    "descricao": [
+        "Uma breve descrição sobre você.",
+        "A quebra de linha é feita por indices dentro do array.",
+        "Na ultima linha do array NÃO coloque virgula."
+    ],
+    "redes_sociais": {
+        "github": "o link do github",
+        "linkedin": "o link do seu linkedin",
+        "twitter": "link do seu twitter"
+    },
+    "habilidades": {
+        "Titulo da Habilidade": {
+            "PHP": "Avançado"
+        },
+        "Front-End": {
+            "Javascript": "Avançado",
+            "HTML5": "Avançado",
+            "CSS3": "Avançado",
+            "Jquery": "Avançado"
+        }
+    },
+    "educacao": [
+        {
+            "nivel": "Superior",
+            "data_inicio": "04/2016",
+            "data_fim": "",
+            "curso": "Sistemas de Informação",
+            "instituicao": "Nome da Faculdade ou Escola",
+            "descricao": [
+                "Descrição do que você estudou na faculdade"
+            ],
+            "cursando": true
+        },
+        {
+            "nivel": "Técnico",
+            "data_inicio": "04/2016",
+            "data_fim": "04/2017",
+            "curso": "Programação de Jogos Digitais",
+            "instituicao": "Nome da Faculdade ou Escola",
+            "descricao": [
+                "Nesse curso pude experienciar o desenvolvimento de jogos desde a modelagem a programação de cenários e personagens.",
+                "Pude estudar materias como, Lógica de Programação, Interação Homem-Computador, Técnicas Audiovisuais,",
+                "Modelagem 2D e 3D, Física Para Jogos, Linguagem de Programação C# e Programação Orientada a Objetos.",
+                "Matérias quais me deram a base para o meu conhecimento."
+            ],
+            "cursando": false
+        }
+    ],
+    "experiencia": [
+        {
+            "cargo": "Cargo que você ocupa",
+            "empresa": "Nome da Empresa",
+            "descricao": [
+                "As atividades que você realiza."
+            ],
+            "data_inicio": "04/2015",
+            "data_fim": "",
+            "atual": true
+        }
+    ],
+    "complementar": [
+        {
+            "curso": "Curso Complementar",
+            "local": "Empresa ou Local do curso",
+            "descricao": [
+                "Descrição do que você aprendeu."
+            ],
+            "status": "Concluído"
+        },
+        {
+            "curso": "Curso Complementar II",
+            "local": "Fulano cursos e treinamentos",
+            "descricao": [
+                "Aprendi um bocado de coisas legais"
+            ],
+            "status": "Em andamento"
+        }
+    ]
+}

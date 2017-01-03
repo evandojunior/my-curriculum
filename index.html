@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>My Curriculum</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style>
+		@media print
+		{    
+			.no-print, .no-print *
+			{
+				display: none !important;
+			}
+			a[href]:after {
+				content: none !important;
+			}
+		}
+	</style>
+	<style type="text/css" media="print">
+		@page 
+		{
+			size: auto;
+			margin: 0mm;
+		}
+
+		body 
+		{
+			margin: 40px; 
+		}
+	</style>
+</head>
+<body>
+	<!-- Dados Pessoais -->
+	<div id="app" class="container">
+		<section id="top">
+			<div class="row">
+				<div class="col-md-12">
+					<h2>{{perfil.nome}}</h2>
+					<hr>
+					<span>{{perfil.nascionalidade}}, {{perfil.idade}} anos.
+					</span>
+					<br><i class="fa fa-envelope"></i> <a target="_blank">{{perfil.email}}</a>
+					<ul class="list-unstyled">
+						<ul class="list-unstyled" v-for="(item, index) in perfil.redes_sociais">
+							<li><i :class="'fa fa fa-'+index"></i> <a :href="item" target="_blank" title="github">{{item}}</a></li>
+						</ul>
+						<address>
+							<i class="fa fa-map-marker"></i> 
+							{{perfil.cidade}} - {{perfil.estado}}, {{perfil.pais}}
+						</address>
+					</ul>
+				</div>
+			</div>
+		</section>
+
+		<!-- Perfil Profissional -->
+		<section id="perfil">
+			<div class="row">
+				<div class="col-md-12">
+					<h3>Perfil Profissional</h3>
+					<p v-for="d of perfil.descricao">{{d}}</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- Habilidades -->
+		<section id="habilidades">
+			<div class="row">
+				<div class="col-md-12">
+					<h3>Habilidades</h3>
+					<ul class="list-unstyled" v-for="(item, index) in perfil.habilidades">
+						<li><h4>{{index}}</h4></li>
+						<ul v-for="(i, k) in item">
+							<li><strong>{{k}}</strong> - {{i}}</li>
+						</ul>
+					</ul>
+				</div>
+			</div>
+		</section>
+
+		<!-- Formação Acadêmica -->
+		<section class="educacao">
+			<div class="row">
+				<div class="col-md-12">
+					<h3>Formação Acadêmica</h3>
+					<div v-for="e in perfil.educacao">
+						<div class="row">
+							<div class="col-md-12">
+								<h4>{{e.curso}} - <small>{{e.data_inicio}} - {{e.cursando ? 'Cursando' : e.data_fim}}</small></h4>
+								<h5>{{e.instituicao}}</h5>
+								<p v-for="d of e.descricao">{{d}}</p>
+							</div>
+						</div>	
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Experiência Profissional -->
+		<section class="experiencia">
+			<div class="row">
+				<div class="col-md-12">
+					<h3>Experiência Profissional</h3>
+					<div v-for="e in perfil.experiencia">
+						<div class="row">
+							<div class="col-md-12">
+								<h4>{{e.cargo}} - <small>{{e.data_inicio}} - {{e.atual ? 'Atualmente' : e.data_fim}}</small></h4>
+								<h5>{{e.empresa}}</h5>
+								<p v-for="d of e.descricao">{{d}}</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Formação Complementar -->
+		<section class="cursos">
+			<div class="row">
+				<div class="col-md-12">
+					<h3>Formação Complementar</h3>
+					<div v-for="c in perfil.complementar">
+						<div class="row">
+							<div class="col-md-12">
+								<h4>{{c.curso}} - <small>{{c.status}}</small></h4>
+								<h5>{{c.local}}</h5>
+								<p v-for="d of c.descricao">{{d}}</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<hr class="no-print">
+	</div>
+
+
+	<!-- Footer -->
+	<footer class="text-center no-print">
+		<p><span>© 2016 Feito com <i class="fa fa-heart" style="color: red;" aria-hidden="true"></i> por <a href="https://github.com/evandojunior/my-curriculum" style="text-decoration: none; color:#333">Evando Junior</a></span>
+			<a href="#" onclick="javascript:window.print();">Imprimir</a> | 
+			<a href="#top">Topo <i class="fa fa-chevron-up"></i></a>
+		</p>
+	</footer>
+
+
+	<!-- scripts -->
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.8/vue.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue-resource/1.0.3/vue-resource.min.js"></script>
+	<script src="src/bootstrap.js"></script>
+
+</body>
+</html>
