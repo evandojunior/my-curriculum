@@ -7,30 +7,7 @@
 	<title>my-curriculum</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	<style>
-		@media print
-		{    
-			.no-print, .no-print *
-			{
-				display: none !important;
-			}
-			a[href]:after {
-				content: none !important;
-			}
-		}
-	</style>
-	<style type="text/css" media="print">
-		@page 
-		{
-			size: auto;
-			margin: 0mm;
-		}
-
-		body 
-		{
-			margin: 40px; 
-		}
-	</style>
+	<link rel="stylesheet" href="src/css/main.css">
 </head>
 <body>
 	<!-- Dados Pessoais -->
@@ -55,7 +32,6 @@
 				</div>
 			</div>
 		</section>
-
 		<!-- Perfil Profissional -->
 		<section id="perfil">
 			<div class="row">
@@ -66,20 +42,26 @@
 			</div>
 		</section>
 
-		<!-- Habilidades -->
-		<section id="habilidades">
+
+		<!-- Experiência Profissional -->
+		<section class="experiencia">
 			<div class="row">
 				<div class="col-md-12">
-					<h3>Habilidades</h3>
-					<ul class="list-unstyled" v-for="(item, index) in perfil.habilidades">
-						<li><h4>{{index}}</h4></li>
-						<ul v-for="(i, k) in item">
-							<li><strong>{{k}}</strong> - {{i}}</li>
-						</ul>
-					</ul>
+					<h3>Experiência Profissional</h3>
+					<div v-for="e in perfil.experiencia">
+						<div class="row">
+							<div class="col-md-12">
+								<h4>{{e.cargo}} - <small>{{e.data_inicio}} - {{e.atual ? 'Atualmente' : e.data_fim}}</small></h4>
+								<h5>{{e.empresa}}</h5>
+								<p v-for="d of e.descricao">{{d}}</p>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</section>
+
+		
 
 		<!-- Formação Acadêmica -->
 		<section class="educacao">
@@ -98,21 +80,18 @@
 				</div>
 			</div>
 		</section>
-
-		<!-- Experiência Profissional -->
-		<section class="experiencia">
+		
+		<!-- Habilidades -->
+		<section id="habilidades">
 			<div class="row">
 				<div class="col-md-12">
-					<h3>Experiência Profissional</h3>
-					<div v-for="e in perfil.experiencia">
-						<div class="row">
-							<div class="col-md-12">
-								<h4>{{e.cargo}} - <small>{{e.data_inicio}} - {{e.atual ? 'Atualmente' : e.data_fim}}</small></h4>
-								<h5>{{e.empresa}}</h5>
-								<p v-for="d of e.descricao">{{d}}</p>
-							</div>
-						</div>
-					</div>
+					<h3>Habilidades</h3>
+					<ul class="list-unstyled" v-for="(item, index) in perfil.habilidades">
+						<li><h4>{{index}}</h4></li>
+						<ul v-for="(i, k) in item">
+							<li><strong>{{k}}</strong> - {{i}}</li>
+						</ul>
+					</ul>
 				</div>
 			</div>
 		</section>
